@@ -1,5 +1,5 @@
-CC      = afl-gcc
-CXX     = afl-g++
+CC      = gcc
+CXX     = g++
 CFLAG   = -g #-fprofile-arcs -ftest-coverage -coverage
 RM      = rm -rf
 
@@ -11,6 +11,9 @@ libpathcov.so: pathcov.c
 hello: hello.c
 	$(CC) $(CFLAG) -o $@ $^ -L./ -lpathcov
 
+fuzz: hello.c
+	$(CC) $(CFLAG) -o ./fuzz/$@ $^ -L./ -lpathcov
+	
 clean: libpathcov.so hello
 	$(RM) $^
 	$(RM) *.gc*
