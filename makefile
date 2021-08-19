@@ -14,6 +14,6 @@ hello: hello.c
 fuzzer: hello.c
 	$(CC) $(CFLAG) -o ./fuzz/$@ $^ -L./ -lpathcov
 	
-clean: libpathcov.so hello
+clean: libpathcov.so hello ./fuzz/fuzzer
 	$(RM) $^
 	$(RM) *.gc*
