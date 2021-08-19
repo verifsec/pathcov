@@ -5,7 +5,7 @@ LIBFUZZ = -fsanitize=address,fuzzer
 LIBFUZZ+= -fsanitize-coverage=edge,indirect-calls,trace-cmp,trace-div,trace-gep
 RM      = rm -rf
 
-all: libpathcov.so hello fuzzer
+all: libpathcov.so hello
 
 libpathcov.so: pathcov.c
 	$(CC) $(CFLAG) --shared -fPIC $^ -o $@
