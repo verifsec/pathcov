@@ -13,7 +13,10 @@ hello: hello.c
 
 fuzzer: hello.c
 	$(CC) $(CFLAG) -o ./fuzz/$@ $^ -L./ -lpathcov
+
+fuzzer0: fuzz/fuzzer0.c
+	$(CC) $(CFLAG) -o ./fuzz/$@ $^ -L./ -lpathcov
 	
-clean: libpathcov.so hello ./fuzz/fuzzer
+clean: libpathcov.so hello ./fuzz/fuzzer*
 	$(RM) $^
 	$(RM) *.gc*
