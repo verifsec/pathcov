@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-
 int hello(uint8_t* buf) {
 	if (buf[0] == 'a') {
 		if (buf[1] == 'b') {
