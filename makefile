@@ -3,7 +3,7 @@ CXX     = g++
 CFLAG   = -g #-fprofile-arcs -ftest-coverage -coverage
 RM      = rm -rf
 
-all: libpathcov.so hello
+all: libpathcov.so hello fuzzer
 
 libpathcov.so: pathcov.c
 	$(CC) $(CFLAG) --shared -fPIC $^ -o $@
@@ -11,7 +11,7 @@ libpathcov.so: pathcov.c
 hello: hello.c
 	$(CC) $(CFLAG) -o $@ $^ -L./ -lpathcov
 
-fuzz: hello.c
+fuzzer: hello.c
 	$(CC) $(CFLAG) -o ./fuzz/$@ $^ -L./ -lpathcov
 	
 clean: libpathcov.so hello
