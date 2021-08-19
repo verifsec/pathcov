@@ -21,4 +21,3 @@ fuzzer0: fuzz/fuzzer0.c
 	
 clean: libpathcov.so hello ./fuzz/fuzzer*
 	$(RM) $^
-	$(RM) *.gc*
