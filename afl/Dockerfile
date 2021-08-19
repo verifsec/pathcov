@@ -8,6 +8,6 @@ RUN sed -i -e 's/O3/O3 -DSIMPLE_FILES/g' ./AFL/Makefile
 RUN make -C ./AFL
 RUN git clone https://github.com/verifsec/pathcov.git
 WORKDIR pathcov
-RUN make $TARGET CC=./AFL/afl-gcc
+RUN make $TARGET CC=../AFL/afl-gcc
 ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:./
 RUN cat ./fuzz/in/aaa | ./fuzz/fuzzer
