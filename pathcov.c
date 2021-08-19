@@ -17,7 +17,7 @@ int hello(uint8_t* buf) {
 		}
 		printf("AXY\n");
 		return 0;
-	} 
+	}
 	printf("Hello\n");
 	return 0;
 }
