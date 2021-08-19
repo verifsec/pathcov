@@ -1,9 +1,9 @@
-CC      = gcc
-CXX     = g++
-CFLAG   = -g -Wall
-LIBFUZZ = -fsanitize=address,fuzzer
-LIBFUZZ+= -fsanitize-coverage=edge,indirect-calls,trace-cmp,trace-div,trace-gep
-RM      = rm -rf
+CC       = gcc
+CXX      = g++
+CFLAG    = -g -Wall
+LIBFUZZ  = -fsanitize=address,fuzzer
+LIBFUZZ += -fsanitize-coverage=edge,indirect-calls,trace-cmp,trace-div,trace-gep
+RM       = rm -rf
 
 all: libpathcov.so hello
 
