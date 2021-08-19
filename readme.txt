@@ -1,3 +1,4 @@
+"Try fuzzing and mesure code coverage!"
 
 Build
 # make
