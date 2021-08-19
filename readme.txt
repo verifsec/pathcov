@@ -19,6 +19,8 @@ AFL @Docker
 
 Libfuzzer
 # make libpathcov.so fuzzer0 CC=clang
+# LD_LIBRARY_PATH=./ ./fuzzer0 >/dev/null -max_total_time=30 -print_final_stats=1
 
 Libfuzzer @Docker
-# 
+# docker build -t --no-cache sample:0 .
+# docker image rm -f 3738d8d12461
