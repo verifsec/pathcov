@@ -13,9 +13,6 @@ AFL@Docker
 # docker run -itd --name sample sample:1
 # docker exec -it sample /opt/AFL/afl-fuzz -m none -i /root/proj/fuzz/in -o ./out -- /root/proj/fuzz/fuzzer
 # docker cp sample:/out .
-# docker stop sample
-# docker rm sample
-# docker image rm -f 79f8dab123f5
 
 Libfuzzer
 # make libpathcov.so fuzzer0 CC=clang
@@ -23,6 +20,5 @@ Libfuzzer
 
 Libfuzzer@Docker
 # docker build -t sample:0 .
-# docker image rm -f 3738d8d12461
 
 /verifsec
