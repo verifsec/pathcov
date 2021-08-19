@@ -1,6 +1,8 @@
 CC      = gcc
 CXX     = g++
-CFLAG   = -g #-fprofile-arcs -ftest-coverage -coverage
+CFLAG   = -g -Wall
+LIBFUZZ = -fsanitize=address,fuzzer
+LIBFUZZ+= -fsanitize-coverage=edge,indirect-calls,trace-cmp,trace-div,trace-gep
 RM      = rm -rf
 
 all: libpathcov.so hello fuzzer
@@ -15,7 +17,7 @@ fuzzer: hello.c
 	$(CC) $(CFLAG) -o ./fuzz/$@ $^ -L./ -lpathcov
 
 fuzzer0: fuzz/fuzzer0.c
-	$(CC) $(CFLAG) -o ./fuzz/$@ $^ -L./ -lpathcov
+	$(CC) $(CFLAG) $(LIBFUZZ) -o ./fuzz/$@ $^ -L./ -lpathcov
 	
 clean: libpathcov.so hello ./fuzz/fuzzer*
 	$(RM) $^
