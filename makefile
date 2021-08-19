@@ -7,10 +7,10 @@ RM       = rm -rf
 
 all: libpathcov.so hello
 
-libpathcov.so: pathcov.c
+libpathcov.so: src/pathcov.c
 	$(CC) $(CFLAG) --shared -fPIC $^ -o $@
 
-hello: hello.c
+hello: src/hello.c
 	$(CC) $(CFLAG) -o $@ $^ -L./ -lpathcov
 
 fuzzer: fuzz/fuzzer.c
