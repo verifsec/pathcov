@@ -5,7 +5,7 @@ Build
 # make clean
 
 AFL
-# make fuzzer CC=afl-gcc
+# make libpathcov.so fuzzer CC=afl-gcc
 # LD_LIBRARY_PATH=./ afl-fuzz -m none -i ./fuzz/in -o ./out -- ./fuzz/fuzzer
 
 AFL @Docker
@@ -18,7 +18,7 @@ AFL @Docker
 # docker image rm -f 79f8dab123f5
 
 Libfuzzer
-# make fuzzer0 CC=clang
+# make libpathcov.so fuzzer0 CC=clang
 
 Libfuzzer @Docker
 # 
