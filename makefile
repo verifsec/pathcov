@@ -13,7 +13,7 @@ libpathcov.so: pathcov.c
 hello: hello.c
 	$(CC) $(CFLAG) -o $@ $^ -L./ -lpathcov
 
-fuzzer: hello.c
+fuzzer: fuzz/fuzzer.c
 	$(CC) $(CFLAG) -o ./fuzz/$@ $^ -L./ -lpathcov
 
 fuzzer0: fuzz/fuzzer0.c
