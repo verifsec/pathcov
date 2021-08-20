@@ -1,4 +1,4 @@
-"Try fuzzing and mesure code coverage!"
+"Try .so fuzzing and mesure code coverage!"
 
 Build
 # make
