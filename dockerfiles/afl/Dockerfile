@@ -9,6 +9,6 @@ RUN make -C ./AFL
 RUN git clone https://github.com/verifsec/pathcov.git
 WORKDIR pathcov
 RUN make $TARGET CC=../AFL/afl-gcc
-ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:./
+ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:/root/pathcov/
 RUN cat ./fuzz/in/aaa | ./fuzz/fuzzer
 WORKDIR ../../sys/devices/system/cpu
