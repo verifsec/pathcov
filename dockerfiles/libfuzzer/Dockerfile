@@ -7,5 +7,5 @@ RUN apt install -y git make clang
 RUN git clone https://github.com/verifsec/pathcov.git
 WORKDIR pathcov
 RUN make $TARGET CC=clang
-ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:./
+ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:/root/pathcov/
 RUN ./fuzz/fuzzer0 >/dev/null -max_total_time=$EXEC_TIME -print_final_stats=1
