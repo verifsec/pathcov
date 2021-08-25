@@ -11,4 +11,3 @@ WORKDIR pathcov
 RUN make $TARGET CC=../AFL/afl-gcc
 ENV LD_LIBRARY_PATH $LD_LIBRARY_PATH:./
 RUN cat ./fuzz/in/aaa | ./fuzz/fuzzer
-
