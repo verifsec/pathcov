@@ -11,7 +11,8 @@ AFL
 
 AFL@Docker
 # docker build -t sample:1 .
-# docker run -itd --name sample sample:1
+# docker run -itd --privileged --name sample sample:1
+# docker exec -it sample echo core >/proc/sys/kernel/core_pattern
 # docker exec -it sample /root/AFL/afl-fuzz -m none -i /root/proj/fuzz/in -o ./out -- /root/proj/fuzz/fuzzer
 # docker cp sample:/out .
 
