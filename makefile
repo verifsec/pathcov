@@ -1,6 +1,6 @@
 CC       = gcc
 CXX      = g++
-CFLAG    = -g -Wall
+CFLAG    = -g -Wall #-fprofile-arcs -ftest-coverage -coverage
 LIBFUZZ  = -fsanitize=address,fuzzer
 LIBFUZZ += -fsanitize-coverage=edge,indirect-calls,trace-cmp,trace-div,trace-gep
 RM       = rm -rf
