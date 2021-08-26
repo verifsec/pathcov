@@ -12,7 +12,7 @@
 3. AFL@Docker
 # docker build -t fz:1 .
 # docker run -itd --privileged --name fz fz:1
-# docker exec -it fz echo core >/proc/sys/kernel/core_pattern
+# docker exec -it fz /bin/bash -c "echo core >/proc/sys/kernel/core_pattern
 # docker exec -it fz /bin/bash -c "echo performance | tee cpu*/cpufreq/scaling_governor"
 # docker exec -it fz /root/AFL/afl-fuzz -m none -i /root/pathcov/fuzz/in -o /root/out -- /root/pathcov/fuzz/fuzzer
 # docker cp fz:/root/out .
