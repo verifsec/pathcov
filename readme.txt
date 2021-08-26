@@ -15,7 +15,7 @@ AFL@Docker
 # docker exec -it sample echo core >/proc/sys/kernel/core_pattern
 # docker exec -it sample /bin/bash -c "echo performance | tee cpu*/cpufreq/scaling_governor"
 # docker exec -it sample /root/AFL/afl-fuzz -m none -i /root/pathcov/fuzz/in -o /root/out -- /root/pathcov/fuzz/fuzzer
-# docker cp sample:/out .
+# docker cp sample:/root/out .
 
 Libfuzzer
 # make libpathcov.so fuzzer0 CC=clang
