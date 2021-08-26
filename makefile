@@ -18,6 +18,3 @@ fuzzer: fuzz/fuzzer.c
 
 fuzzer0: fuzz/fuzzer0.c
 	$(CC) $(CFLAG) $(LIBFUZZ) -o ./fuzz/$@ $^ -L./ -lpathcov
-	
-clean: libpathcov.so hello ./fuzz/fuzzer ./fuzz/fuzzer0
-	$(RM) $^
